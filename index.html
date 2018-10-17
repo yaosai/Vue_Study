@@ -30,7 +30,13 @@
         <!-- 对进行操作 -->
         <div id="canvas" v-on:mousemove="updateXY">
             {{x}},{{y}}
+            <!-- 使用事件修饰符代替事件 -->
+            <!-- <span @mousemove="stopMove">在此处方法失效</span> -->
+            <!-- stop修饰符，使方法失效 -->
+            <span @mousemove.stop>在此处方法失效</span>
         </div>
+        <!-- prevent修饰符可以阻止默认跳转 -->
+        <a @click.prevent="alert()" href="http://www.baidu.com">阻止默认跳转</a>
     </div>
 
     <script src="app.js"></script>

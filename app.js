@@ -23,6 +23,12 @@ new Vue({
             console.log(event);
             this.x = event.offsetX;
             this.y = event.offsetY
+        },
+        stopMove:function(event){
+            event.stopPropagation();
+        },
+        alert:function(){
+            alert("hello")
         }
     }
 })
