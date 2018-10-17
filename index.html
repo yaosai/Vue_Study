@@ -37,6 +37,24 @@
         </div>
         <!-- prevent修饰符可以阻止默认跳转 -->
         <a @click.prevent="alert()" href="http://www.baidu.com">阻止默认跳转</a>
+
+        <h1>双向数据绑定：input、select、textarea</h1>
+        <label>姓名：</label>
+        <!-- ref,将对象注册到ref中，名字为name1 -->
+        <input ref="name1" type="text" @keyup="logName1">
+        <span>{{name1}}</span>
+        <label>年龄：</label>
+        <input ref="age1" type="text" @keyup="logAge1">
+        <span>{{age1}}</span>
+
+        <h1>双向数据绑定：v-model方法可以实现双向绑定，不需要再写方法</h1>
+        <label>姓名：</label>
+        <!-- ref,将对象注册到ref中，名字为name1 -->
+        <input ref="name1" type="text" v-model="name1">
+        <span>{{name1}}</span>
+        <label>年龄：</label>
+        <input ref="age1" type="text" v-model="age1">
+        <span>{{age1}}</span>
     </div>
 
     <script src="app.js"></script>
