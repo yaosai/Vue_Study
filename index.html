@@ -20,7 +20,19 @@
         <a v-bind:href="website">百度链接</a>
         <!-- v-html:绑定标签 -->
         <p v-html="websiteTag"></p>
+        <!-- vue事件v-on,事件绑定后的方法不需要加括号，因为vue能确定是方法 -->
+        <!-- <button v-on:click="age++">点击加一</button> -->
+        <!-- <button v-on:click="age--">点击减一</button> -->
+        <!-- 将操作放在js方法里,注意：v-on和@功能一样 -->
+        <button v-on:click="add(1)">点击加一</button>
+        <button @click="sub(1)">点击减一</button>
+        <p>my age is {{age}}</p>
+        <!-- 对进行操作 -->
+        <div id="canvas" v-on:mousemove="updateXY">
+            {{x}},{{y}}
+        </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 
