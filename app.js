@@ -24,11 +24,17 @@ new Vue({
             this.x = event.offsetX;
             this.y = event.offsetY
         },
-        stopMove:function(event){
+        stopMove: function (event) {
             event.stopPropagation();
         },
-        alert:function(){
+        alert: function () {
             alert("hello")
+        },
+        logName: function () {
+            console.log("输入姓名")
+        },
+        logAge: function () {
+            console.log("输入年龄")
         }
     }
 })
