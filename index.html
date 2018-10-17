@@ -12,8 +12,14 @@
 
 <body>
     <div id="app">
+        <!-- vue传值 -->
         <p> {{name}} </p>
-        <h1>{{greet('yaosai')}}</h1>
+        <!-- vue方法调用 -->
+        <p>{{greet('yaosai')}}</p>
+        <!-- vue属性绑定，使用v-bindv-bind -->
+        <a v-bind:href="website">百度链接</a>
+        <!-- v-html:绑定标签 -->
+        <p v-html="websiteTag"></p>
     </div>
     <script src="app.js"></script>
 </body>
