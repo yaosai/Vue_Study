@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>使用组件化修改ToolList</title>
+</head>
+
+<body>
+    <div id="app">
+        <!--v-model绑定inputValue -->
+        <input type="text" v-model="inputValue" />
+        <!--v-on触发click事件: handleBtnClick -->
+        <button v-on:click="handleBtnClick">提交</button>
+        <ul>
+            <todo-item v-bind:content="item" v-for="item in list"></todo-item>
+        </ul>
+    </div>
+    <script>
+        Vue.component("TodoItem", {
+            props: ['content'],
+            template: "<li>{{content}}</li>"
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                list: [],
+                inputValue: ''
+            },
+            methods: {
+                handleBtnClick: function () {
+                    this.list.push(this.inputValue)
+                    this.inputValue = ''
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
