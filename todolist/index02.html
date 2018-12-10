@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="update">
         <!--v-model绑定inputValue -->
         <input type="text" v-model="inputValue" />
         <!--v-on触发click事件: handleBtnClick -->
@@ -19,25 +19,8 @@
             <todo-item v-bind:content="item" v-for="item in list"></todo-item>
         </ul>
     </div>
-    <script>
-        Vue.component("TodoItem", {
-            props: ['content'],
-            template: "<li>{{content}}</li>"
-        })
-        var app = new Vue({
-            el: '#app',
-            data: {
-                list: [],
-                inputValue: ''
-            },
-            methods: {
-                handleBtnClick: function () {
-                    this.list.push(this.inputValue)
-                    this.inputValue = ''
-                }
-            }
-        })
-    </script>
+    
+    <script src="app.js"></script>
 </body>
 
 </html>
